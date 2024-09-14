@@ -53,10 +53,16 @@ ul {
     margin: 0px 8px
 }
 
+.whatsapp-number i,
+span {
+    margin: 0em 0.2em;
+}
+
 .align-linear {
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* justify-content: center; */
 }
 
 .menu-and-logo .zipgrid-logo {
