@@ -20,12 +20,15 @@ ul {
     font-family: "Inter", sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 .header {
-    /* position: fixed; */
-    width: 100%;
     border-bottom: 2px solid #efefef;
-    padding-bottom: 5px;
-    /* top: 0px; */
+    padding-bottom: 0.5em;
 }
 
 .contact-header {
@@ -33,20 +36,18 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 5%;
+    padding: 0.7em 5%;
     color: #b7b7b7;
     background: #1D2026;
     font-size: 1.4rem;
 }
 
 .menu-and-logo {
-    width: 17%;
-    justify-content: space-between;
+    /* width: 17%; */
 }
 
 .contact-header-section {
-    width: 22%;
-    justify-content: space-between;
+    /* width: 22%; */
 }
 
 .icon-and-text-margin {
@@ -62,7 +63,8 @@ span {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-between;
+    margin: 0em 1em;
 }
 
 .menu-and-logo .zipgrid-logo {
@@ -72,6 +74,14 @@ span {
 
 .panel-menu span {
     text-transform: uppercase;
+}
+
+.panel-menu {
+    display: none;
+}
+
+.panel-menu input[type="checkbox"] {
+    display: none;
 }
 
 .contact-header-section .support-btn i {
@@ -277,12 +287,15 @@ span {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .stat {
     text-align: center;
+    margin: 0em 1em;
 }
 
 .stat h2 {
@@ -793,4 +806,46 @@ span {
 
 .footer-links:hover {
     color: #ffffff;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: #838383;
+}
+
+/* ------------------------------- Media Query ------------------------------------ */
+
+@media (min-width:1230px) and (max-width:1400px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width:1230px) {
+    html {
+        font-size: 7px;
+    }
+
+    .panel-menu {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+    }
+
+    .panel-menu input[type="checkbox"] {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3rem;
+        cursor: pointer;
+        right: 2px;
+        opacity: 0.5;
+        z-index: 5;
+    }
+
+    .slide-nav-btn:checked ~   .panel-menu span {
+        display: none;
+    }
 }
